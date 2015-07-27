@@ -23,7 +23,7 @@ if(process.argv.length > 2) {
           var article = 'a ';
       }
       if(i === 0) {
-        letter = letter.toUppercase();
+        letter = letter.toUpperCase();
       }else {
         letter = letter.toLowerCase();
       }
