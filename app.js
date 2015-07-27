@@ -3,7 +3,9 @@ var fs = require('fs');
 
 if(process.argv.length > 2) {
   for (var i = 2; i < process.argv.length; i++) {
-    process.argv[i].split(" ").forEach(function(letter, i) {
+    // var letter = letter.toUpperCase().split('');
+    process.argv[i].split('').forEach(function(letter) {
+      // console.log(letter, 'letter');
       switch(letter.toUpperCase()) {
         case 'A':
         case 'E':
@@ -22,13 +24,9 @@ if(process.argv.length > 2) {
         default:
           var article = 'a ';
       }
-      if(i === 0) {
-        letter = letter.toUpperCase();
-      }else {
-        letter = letter.toLowerCase();
-      }
-      console.log('Give me ' + article + letter+ '!');
-    })
+
+      console.log('Give me ' + article + letter.toUpperCase() + '!');
+    });
   }
 }  else {
       var msg = fs.readFileSync('lib/help.txt', { encoding: 'utf8'});

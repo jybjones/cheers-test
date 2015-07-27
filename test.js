@@ -13,10 +13,8 @@ describe('Mocha + Chai', function() {
 
 describe('CLI', function(){
   it("should start my cheer", function(done){
-    cp.execFile('./app.js', ["Jennifer"], function(err, stdout) {
-      console.log('err', err);
-      console.log('stdout', stdout);
-      stdout.should.equal('\nGive me a J!\nGive me an E!\nGive me an N!\nGive me an N!\nGive me an I!\nGive me an F!\nGive me an E!\nGive me an R!\n');
+    cp.exec('./app.js Jennifer', function(err, stdout) {
+      stdout.should.equal('Give me a J!\nGive me an E!\nGive me an N!\nGive me an N!\nGive me an I!\nGive me an F!\nGive me an E!\nGive me an R!\n');
       done();
     });
   });
